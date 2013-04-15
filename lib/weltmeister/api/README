@@ -1,0 +1,90 @@
+================================================================================
+                             ImpactJS IIS/.NET API
+================================================================================
+
+
+
+LICENSE
+================================================================================
+Copyright 2010 Mike Hamilton. All rights reserved.
+
+Redistribution and use in source and binary forms, with or without modification, are
+permitted provided that the following conditions are met:
+
+   1. Redistributions of source code must retain the above copyright notice, this list of
+      conditions and the following disclaimer.
+
+   2. Redistributions in binary form must reproduce the above copyright notice, this list
+      of conditions and the following disclaimer in the documentation and/or other materials
+      provided with the distribution.
+
+THIS SOFTWARE IS PROVIDED BY MIKE HAMILTON ``AS IS'' AND ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL MIKE HAMILTON OR
+CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+The views and conclusions contained in the software and documentation are those of the
+authors and should not be interpreted as representing official policies, either expressed
+or implied, of Mike Hamilton.
+
+
+
+INFO
+================================================================================
+ImpactJS is a kick-ass JavaScript/HTMl5 game entine that uses the <canvas>
+element and underlying drawing api. It unfortunately depends on the developer
+having Apache/PHP installed on their machine to use the built-in level editor
+(Weltmeister).
+
+If you're running Windows and doing HTML5 game development, you most likely
+already have IIS (and the .NET framework) installed. The files in this package
+allow you to run ImpactJS and the Weltmeister editor in IIS, eliminating the need
+to download, install and configure apache and PHP.
+
+
+
+PRE-REQUISITES
+================================================================================
+For the files in this package to work successfully, it is assumed that you have
+the following already installed on your computer:
+
+- A Windows machine (XP, Vista, 7, Server 2003 or Server 2008)
+- .NET Framework 2.0 or greater
+- IIS and ASP.NET (can be installed via Microsoft's Web Platform installer: )
+
+
+
+INSTALLATION
+================================================================================
+- Unpack the ImpactJS engine files to your IIS web directory
+  (usualy c:\inetpub\wwwroot)
+
+- Copy the files in this package to the /lib/weltmeister/api folder of the
+  ImpactJS installation
+
+- Make the following changes to /lib/weltmeister/api/web.config:
+  - Set the "rootFile" key to the path in your IIS installation where this
+    instance of ImpactJS is located. If the installation is at the root of the
+    IIS website, leave the value at its default: "/". If, for example, you have
+    Impact installed in the /impact folder in your IIS root, just change the
+    web.config key to read "/impact". Simple as that!
+
+- Make the following changes to /lib/weltmeister/config.js:
+  - change the 'save' value in the 'api' section to: 'lib/weltmeister/api/save.aspx' (line 55)
+  - change the 'browse' value in the 'api' section to: 'lib/weltmeister/api/browse.aspx' (line 56)
+  - change the 'glob' value in the 'api' section to: 'lib/weltmeister/api/glob.aspx' (line 57)
+
+- Make the following change to /lib/weltmeister/modal-dialog.js:
+  - change the 'this.pathDropdown' value to: 'lib/weltmeister/api/browse.aspx' in the initDialog function (line 96)
+
+- Browse to /weltmeister.html in your website and ensure that everything loaded
+  and no exceptions were thrown (check the JavaScript error console in your
+  browser).
+
+Once you follow these steps, you should be able to work with ImpactJS in IIS
+just as you would if you were running Apache/PHP.
