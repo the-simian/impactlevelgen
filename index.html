@@ -1,31 +1,198 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Impact Game</title>
-	<style type="text/css">
-		html,body {
-			background-color: #333;
-			color: #fff;
-			font-family: helvetica, arial, sans-serif;
-			margin: 0;
-			padding: 0;
-			font-size: 12pt;
-		}
-		
-		#canvas {
-			position: absolute;
-			left: 0;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			margin: auto;
-		}
-	</style>
+    <title>Impact Game</title>
+    <link href="css/waffles.css" rel="stylesheet" />
+    <link href="css/Styles.css" rel="stylesheet" />
     <script src="lib/plugins/jquery-1.9.1-min.js"></script>
-	<script type="text/javascript" src="lib/impact/impact.js"></script>
-	<script type="text/javascript" src="lib/game/main.js"></script>
+    <script type="text/javascript" src="lib/impact/impact.js"></script>
+    <script type="text/javascript" src="lib/game/main.js"></script>
 </head>
-<body>
-	<canvas id="canvas"></canvas>
+<body class="waffles" style="max-width: 1680px">
+    <div class="w-12 w-alpha w-omega w-v-3">
+        <div class="w-auto">
+            <canvas id="canvas"></canvas>
+        </div>
+        <div class="w-auto">
+            <div class="w-12 w-alpha w-omega">
+                <div class="w-omega w-6 w-fix">
+                    <h2>Level</h2>
+                    <h2>Generator</h2>
+                </div>
+                <div class="w-auto">
+                    <h1>Chamber</h1>
+                </div>
+            </div>
+            <fieldset class="w-12 w-alpha w-omega w-v-1">
+                <legend>Chamber Settings</legend>
+                <div class="w-12">
+                    <div class="w-12 w-alpha w-omega w-v-2">
+                        <div class="w-5 w-fix w-alpha">
+                            <h3>Size</h3>
+                        </div>
+                        <div class="w-auto">
+                            <div class="w-auto">
+                                <label>Width [units]</label>
+                            </div>
+                            <div class="w-auto">
+                                <input />
+                            </div>
+                            <div class="w-auto">
+                                <label>Height [units]</label>
+                            </div>
+                            <div class="w-auto">
+                                <input />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-12 w-alpha w-omega w-v-2">
+                        <div class="w-5 w-fix w-alpha">
+                            <h3>Divisions</h3>
+                        </div>
+                        <div class="w-auto">
+                            <div class="w-auto">
+                                <label>Amount</label>
+                            </div>
+                            <div class="w-auto">
+                                <input />
+                            </div>
+                            <div class="w-auto">
+                                <label>Min</label>
+                            </div>
+                            <div class="w-auto">
+                                <input />
+                            </div>
+                            <div class="w-auto">
+                                <label>Max</label>
+                            </div>
+                            <div class="w-auto">
+                                <input />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-12 w-alpha w-omega w-v-2">
+                        <div class="w-5 w-fix w-alpha">
+                            <h3>Tiles</h3>
+                        </div>
+                        <div class="w-auto">
+                            <div class="w-auto">
+                                <label>Floor</label>
+                            </div>
+                            <div class="w-auto">
+                                <input />
+                            </div>
+                            <div class="w-auto">
+                                <label>Wall</label>
+                            </div>
+                            <div class="w-auto">
+                                <input />
+                            </div>
+                            <div class="w-auto">
+                                <label>Void</label>
+                            </div>
+                            <div class="w-auto">
+                                <input />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-12 w-alpha w-omega w-v-2">
+                        <div class="w-12 w-v-1">
+                            <div class="w-3 w-alpha">
+                                <h4>Porportion</h4>
+                            </div>
+                            <div class="w-9 w-omega">
+                                <div class="w-auto">
+                                    <label>Tolerance</label>
+                                </div>
+                                <div class="w-auto">
+                                    <input />
+                                </div>
+                                <div class="w-auto">
+                                    <label>Retry Times</label>
+                                </div>
+                                <div class="w-auto">
+                                    <input />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-12 w-v-1">
+                            <div class="w-3 w-alpha">
+                                <h4>Corners</h4>
+                            </div>
+                            <div class="w-9 w-omega">
+                                <div class="w-auto">
+                                    <label>ON</label>
+                                </div>
+                                <div class="w-auto">
+                                    <input type="checkbox" />
+                                </div>
+                                <div class="w-auto">
+                                    <label>Depth</label>
+                                </div>
+                                <div class="w-auto">
+                                    <input disabled value="1" />
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="w-12 w-v-1">
+                            <div class="w-3 w-alpha">
+                                <h4>Path Size</h4>
+                            </div>
+                            <div class="w-9 w-omega">
+                                <div class="w-auto">
+                                    <label>Min</label>
+                                </div>
+                                <div class="w-auto">
+                                    <input />
+                                </div>
+                                <div class="w-auto">
+                                    <label>Max</label>
+                                </div>
+                                <div class="w-auto">
+                                    <input />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="w-12 w-v-1">
+                            <div class="w-3 w-alpha">
+                                <h4>Room Size Ratio</h4>
+                            </div>
+                            <div class="w-9 w-omega">
+                                <div class="w-auto">
+                                    <label>Random</label>
+                                </div>
+                                <div class="w-auto">
+                                    <input />
+                                </div>
+                                <div class="w-auto">
+                                    <label>Fixed</label>
+                                </div>
+                                <div class="w-auto">
+                                    <input />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="w-12 w-alpha w-omega w-v-1 w-v_1">
+                        <button>Generate Again</button>
+                    </div>
+
+                </div>
+            </fieldset>
+
+            <div class="w-12 w-alpha w-omega">
+                <textarea id="arrayoutput">
+            
+                </textarea>
+            </div>
+        </div>
+    </div>
+    <div class="w-12 w-alpha w-omega w-v-1">
+        <div class="w-12 w-alpha w-omega" id="minimap">
+        </div>
+    </div>
 </body>
 </html>

@@ -1,0 +1,113 @@
+﻿
+@font-face {
+    font-family: 'dbe-nitrogenregular';
+    src: url('fonts/dbe-nitrogen-webfont.eot');
+    src: url('fonts/dbe-nitrogen-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/dbe-nitrogen-webfont.woff') format('woff'),
+         url('fonts/dbe-nitrogen-webfont.ttf') format('truetype'),
+         url('fonts/dbe-nitrogen-webfont.svg#dbe-nitrogenregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+     font-family: Calibri
+}
+
+h1 {
+    font-family: dbe-nitrogenregular;
+    font-size: 90px;
+    margin: 0px;
+    max-width:100%
+}
+
+h2 {
+    margin: 0px;
+}
+
+h3 {
+    margin: 0px;
+    font-family: Calibri
+}
+h4 {
+    margin: 0px;
+}
+
+label {
+    font-size: 16px;
+    line-height: 16px;
+    text-align: right;
+    width: 100%;
+    display: inline-block;
+    margin-top: 4px;
+}
+
+#canvas {
+    max-width: 100%;
+    width: 100%;
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    display: block;
+    width: 100%;
+}
+
+legend {
+    font-size: 24px;
+}
+
+#minimap {
+    min-height: 300px;
+    max-height: 400px;
+    overflow: auto;
+    width: 100%;
+    background-color: gray;
+    background-image: repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);
+}
+
+#minimap table {
+    border-collapse: collapse;
+
+    margin: 0 auto;
+    -webkit-box-shadow:  5px 5px 15px 3px rgba(0, 0, 0, 0.5);
+        
+        box-shadow:  5px 5px 15px 3px rgba(0, 0, 0, 0.5);
+}
+
+#minimap td {
+    width: 5px;
+    height: 5px;
+    border: none;
+    
+}
+
+input, textarea {
+    width: 100%;
+    margin: 0;
+    padding: 3px 0px 3px 0px;
+    text-indent: 3px;
+}
+textarea:focus {
+    background-color: rgba(128,255,65,0.4)
+}
+input:focus {
+    background-color: rgba(128,255,65,0.4)
+}
+
+#arrayoutput {
+    min-height: 100px;
+    height: 150px;
+    max-height: 300px;
+}
+
+button {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+}
+
+
